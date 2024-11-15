@@ -1,7 +1,3 @@
-Here's an enhanced README for your frontend React application:
-
----
-
 # Frontend Application - Fault Reporting System
 
 This frontend application is a React-based single-page application developed with [Vite](https://vitejs.dev/) for fast development and hot module replacement (HMR). The application integrates with a FastAPI backend and provides a user-friendly interface for reporting, managing, and viewing issue reports.
@@ -52,7 +48,7 @@ frontend/
 1. **Clone the repository**:
 
     ```bash
-    git clone <repository-url>
+    git clone git@github.com:jingjie2205/SC2006-Mike-Hawk-frontend.git
     cd frontend
     ```
 

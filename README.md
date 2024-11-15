@@ -52,7 +52,7 @@ You can run both the frontend and backend with Docker Compose for an easy, conta
 1. **Clone the repository**:
 
     ```bash
-    git clone git@github.com:maxwellau2/ReportQuest.git
+    git clone git@github.com:maxwellau2/SC2006-Milestone-1.git
     cd ReportQuest
     ```
 
