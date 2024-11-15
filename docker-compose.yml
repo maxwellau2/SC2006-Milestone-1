@@ -1,0 +1,42 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        container_name: reportquest-backend
+        ports:
+            - "8000:8000"
+        environment:
+            - DATABASE_URL=sqlite:///./database.db
+            - ALLOW_ORIGINS=http://localhost:5173
+        volumes:
+            - ./backend:/app
+        depends_on:
+            - db
+
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        container_name: reportquest-frontend
+        ports:
+            - "5173:5173"
+        environment:
+            - VITE_BACKEND_URL=http://localhost:8000
+        volumes:
+            - ./frontend:/app
+        depends_on:
+            - backend
+
+    db:
+        image: sqlite
+        container_name: reportquest-db
+        volumes:
+            - sqlite-data:/data
+
+volumes:
+    sqlite-data:
