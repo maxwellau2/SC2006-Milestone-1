@@ -1,0 +1,180 @@
+.
+├── README.md
+├── backend
+│   ├── Dockerfile
+│   ├── Makefile
+│   ├── README.md
+│   ├── config.py
+│   ├── database
+│   │   ├── authorities.csv
+│   │   ├── authority.db
+│   │   ├── myRewards.db
+│   │   ├── points.db
+│   │   ├── posts.db
+│   │   ├── reports.db
+│   │   ├── rewards.db
+│   │   └── users.db
+│   ├── database_seeder
+│   │   ├── seedAuthority.py
+│   │   ├── seedMyRewards.py
+│   │   ├── seedPosts.py
+│   │   ├── seedReports.py
+│   │   ├── seedRewards.py
+│   │   └── seedUsers.py
+│   ├── img
+│   │   ├── postImages
+│   │   ├── profilepics
+│   │   ├── reportimg
+│   │   └── voucherimg
+│   ├── main.py
+│   ├── migrate.py
+│   ├── requirements.txt
+│   ├── seed.py
+│   ├── src
+│   │   ├── login
+│   │   ├── middleware
+│   │   │   └── verifyJWT.py
+│   │   ├── migrations
+│   │   │   ├── 10102024createUserTable.py
+│   │   │   ├── 10162024createReportsTable.py
+│   │   │   ├── 10182024CreateRewards.py
+│   │   │   ├── 10262024createPointsTable.py
+│   │   │   ├── 11052024createMyRewards.py
+│   │   │   ├── 11082024createForgotPassword.py
+│   │   │   ├── 11082024createUnverifiedUsers.py
+│   │   │   ├── 11102024createAuthorityTable.py
+│   │   │   ├── 11102024createPostsTable.py
+│   │   │   └── migration_utils.py
+│   │   ├── posts
+│   │   │   ├── controllers
+│   │   │   │   ├── ControllerPosts.py
+│   │   │   │   └── README.md
+│   │   │   ├── models
+│   │   │   │   ├── AuthorityModel.py
+│   │   │   │   ├── PostModel.py
+│   │   │   │   └── README.md
+│   │   │   ├── services
+│   │   │   │   ├── AuthorityService.py
+│   │   │   │   ├── PostService.py
+│   │   │   │   └── README.md
+│   │   │   ├── test_api
+│   │   │   │   └── test_post_controller.py
+│   │   │   └── test_unit
+│   │   │       └── test_post_service.py
+│   │   ├── reports
+│   │   │   ├── controllers
+│   │   │   │   ├── ControllerReports.py
+│   │   │   │   └── README.md
+│   │   │   ├── models
+│   │   │   │   ├── PointsModel.py
+│   │   │   │   ├── README.md
+│   │   │   │   └── ReportModels.py
+│   │   │   ├── services
+│   │   │   │   ├── OllamaAsync.py
+│   │   │   │   ├── PointsService.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ReportService.py
+│   │   │   │   └── telegramBot.py
+│   │   │   ├── test_api
+│   │   │   │   └── test_controller_report.py
+│   │   │   └── test_unit
+│   │   │       ├── test_points_service.py
+│   │   │       └── test_report_service.py
+│   │   ├── rewards
+│   │   │   ├── controllers
+│   │   │   │   ├── ControllerReward.py
+│   │   │   │   └── README.md
+│   │   │   ├── models
+│   │   │   │   ├── MyRewards.py
+│   │   │   │   ├── README.md
+│   │   │   │   └── RewardModel.py
+│   │   │   ├── services
+│   │   │   │   ├── README.md
+│   │   │   │   └── RewardService.py
+│   │   │   ├── test_api
+│   │   │   │   └── test_rewards_controller.py
+│   │   │   └── test_unit
+│   │   │       └── test_reward_service.py
+│   │   └── users
+│   │       ├── controllers
+│   │       │   ├── ControllerPublic.py
+│   │       │   └── ControllerUser.py
+│   │       ├── models
+│   │       │   ├── PasswordReset.py
+│   │       │   ├── UnverifiedUsers.py
+│   │       │   └── UserModels.py
+│   │       ├── services
+│   │       │   ├── AuthService.py
+│   │       │   └── UserService.py
+│   │       ├── test_api
+│   │       │   └── test_user_controller.py
+│   │       └── test_unit
+│   │           └── test_user_service.py
+│   ├── structure.txt
+│   └── todo
+├── docker-compose.yml
+├── frontend
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── frontend
+│   │   ├── eslint.config.js
+│   │   ├── frontendStructure.txt
+│   │   ├── index.html
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── public
+│   │   │   └── vite.svg
+│   │   ├── src
+│   │   │   ├── Assets
+│   │   │   │   └── AirconLeakage.webp
+│   │   │   ├── Common
+│   │   │   │   └── NavBar.jsx
+│   │   │   ├── Components
+│   │   │   │   ├── AdminManagementPage
+│   │   │   │   │   ├── AdminManageRewards.jsx
+│   │   │   │   │   ├── AdminManageUser.jsx
+│   │   │   │   │   └── AdminManagementPage.jsx
+│   │   │   │   ├── AdminRestrictedRoute
+│   │   │   │   │   └── AdminRestrictedRoute.jsx
+│   │   │   │   ├── AuthorityMyReport
+│   │   │   │   │   └── AuthorityMyReport.jsx
+│   │   │   │   ├── ForbiddenPage
+│   │   │   │   │   └── ForbiddenPage.jsx
+│   │   │   │   ├── LoginForm
+│   │   │   │   │   ├── LoginForm.css
+│   │   │   │   │   └── LoginForm.jsx
+│   │   │   │   ├── MakeReport
+│   │   │   │   │   ├── ImageUpload.jsx
+│   │   │   │   │   ├── LocationPicker.css
+│   │   │   │   │   ├── LocationPicker.jsx
+│   │   │   │   │   └── MakeReport.jsx
+│   │   │   │   ├── PasswordResetForm
+│   │   │   │   │   └── PasswordResetForm.jsx
+│   │   │   │   ├── ProfilePage
+│   │   │   │   │   └── ProfilePage.jsx
+│   │   │   │   ├── ProtectedRoute
+│   │   │   │   │   └── ProtectedRoute.jsx
+│   │   │   │   ├── RegisterForm
+│   │   │   │   │   └── RegisterForm.jsx
+│   │   │   │   ├── RewardsPage
+│   │   │   │   │   ├── MyRewardsCard.jsx
+│   │   │   │   │   ├── MyRewardsPage.jsx
+│   │   │   │   │   ├── RewardsCard.css
+│   │   │   │   │   ├── RewardsCard.jsx
+│   │   │   │   │   └── RewardsPage.jsx
+│   │   │   │   ├── UserDashboard
+│   │   │   │   │   ├── Post.jsx
+│   │   │   │   │   └── UserDashboard.jsx
+│   │   │   │   └── UserMyReport
+│   │   │   │       ├── ReportDetail.jsx
+│   │   │   │       ├── ReportItem.jsx
+│   │   │   │       ├── SortBy.jsx
+│   │   │   │       └── UserMyReport.jsx
+│   │   │   ├── config.js
+│   │   │   ├── index.css
+│   │   │   └── main.jsx
+│   │   └── vite.config.js
+│   └── package-lock.json
+└── structure.txt
+
+56 directories, 121 files
