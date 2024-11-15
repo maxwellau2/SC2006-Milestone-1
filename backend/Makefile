@@ -42,4 +42,6 @@ test:
 	make migrate-full && PYTHONPATH=./ pytest --verbose --disable-warnings && make-migrate-full
 
 clean:
-	rm -rf *.pyc __pycache__/
+	find . -name "*.pyc" -delete
+	find . -name "__pycache__" -type d -exec rm -rf {} +
+	rm -rf .pytest_cache

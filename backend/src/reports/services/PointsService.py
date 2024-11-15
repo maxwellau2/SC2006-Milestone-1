@@ -8,6 +8,7 @@ from src.reports.services.ReportService import ReportService
 import asyncio
 from src.reports.services.telegramBot import telegramBot
 from asyncio import Semaphore
+from config import BOT_TOKEN, CHAT_ID
 
 
 class PointsService:
@@ -16,8 +17,8 @@ class PointsService:
         self.conn = conn
         self.ollama = OllamaChat("llama3.2")
         self.bot = telegramBot(
-            botToken="8163519930:AAHaPms3-hoBN5d7SRScXdsyeW-UBHaSXro",
-            chatID="-1002377143830",
+            botToken=BOT_TOKEN,
+            chatID=CHAT_ID,
         )
         self.semaphore = semaphore if semaphore else Semaphore(1)
 
