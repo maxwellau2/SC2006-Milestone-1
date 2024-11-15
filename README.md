@@ -1,7 +1,3 @@
-Here's an updated README that includes Docker setup instructions with Docker Compose:
-
----
-
 # ReportQuest Project
 
 This project is a fault reporting system built with a **React frontend** and a **FastAPI backend**. Users can report issues, view reports, and earn rewards, while administrators and authorities can manage reports and user data.
