@@ -1,0 +1,62 @@
+# .github/workflows/ci.yml
+# Used to autorun unit tests
+
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: sqlite
+        options: '--health-cmd "sqlite3 test.db 'SELECT 1'" --health-interval 10s --health-timeout 5s --health-retries 5'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run migrations
+        run: |
+          source venv/bin/activate
+          make migrate-full
+
+      - name: Lint code
+        run: |
+          source venv/bin/activate
+          make lint
+
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          make test
+
+      - name: Generate architecture file
+        run: |
+          source venv/bin/activate
+          make generate-architecture
+        if: success()
+        
+      - name: Upload Architecture File
+        uses: actions/upload-artifact@v3
+        with:
+          name: architecture
+          path: structure.txt
