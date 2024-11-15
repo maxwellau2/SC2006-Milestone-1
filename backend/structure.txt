@@ -1,0 +1,221 @@
+.
+├── CHECKPOINT.md
+├── Makefile
+├── README.md
+├── config.py
+├── database
+│   ├── authorities.csv
+│   ├── authority.db
+│   ├── myRewards.db
+│   ├── points.db
+│   ├── posts.db
+│   ├── reports.db
+│   ├── rewards.db
+│   └── users.db
+├── database_seeder
+│   ├── seedAuthority.py
+│   ├── seedMyRewards.py
+│   ├── seedReports.py
+│   ├── seedRewards.py
+│   └── seedUsers.py
+├── img
+│   ├── postImages
+│   │   ├── 123e4567-e89b-12d3-a456-426614174019.png
+│   │   ├── 16f75c98-3d0d-4cf3-920e-6e313de35391.png
+│   │   ├── 1a721875-52ea-4a54-bead-4ef1cf4e679a.png
+│   │   ├── 3fcea5d1-2e25-4743-a274-13cafd9813af.png
+│   │   ├── 417b3c94-5971-495c-b47a-5afd3aed89af.png
+│   │   ├── 4506f8e8-b252-4435-ad16-2ebece620788.png
+│   │   ├── 453e947a-be43-4fd6-9e9c-98ff4d9b231d.png
+│   │   ├── 473be919-1ba3-480c-9673-ad5a7a242cc2.png
+│   │   ├── 59ef2f07-d88b-40a3-a35d-11e7af517284.png
+│   │   ├── 66b675cb-051f-42ba-8f6f-b2230ded1c0a.png
+│   │   ├── 67ee02a8-2536-4c07-b11b-f63f2bda88cb.png
+│   │   ├── 732ad509-eef3-4bbc-aab7-82dee546d035.png
+│   │   ├── 77cfefc5-73d1-4341-a73a-a069c2249383.png
+│   │   ├── 80bae70a-f33b-4803-8a44-0c65f9aab148.png
+│   │   ├── 84300488-469d-415c-8209-4704076ecd83.png
+│   │   ├── 8a4cb91b-fa35-47f9-ba0b-6137d57281cf.png
+│   │   ├── 9d90905e-478e-467f-adbe-a7d0164d7f48.png
+│   │   ├── c3d1ffd8-7341-40ab-ac1a-a4f902b0c895.png
+│   │   ├── c763f565-c38c-4193-be21-7e7c63ca7ca1.png
+│   │   ├── d0baecd1-d183-498d-8a43-9b3c1011394b.png
+│   │   ├── de8bf25c-8a1f-4b91-a482-7133d471e7ab.png
+│   │   ├── default.png
+│   │   ├── f86715fa-3c83-41b3-8eff-dab0d2603d59.png
+│   │   └── ff9c31c9-02eb-48f9-a642-e62fa258a8f1.png
+│   ├── profilepics
+│   │   ├── 123e4567-e89b-12d3-a456-426614174000.png
+│   │   ├── 123e4567-e89b-12d3-a456-426614174004.png
+│   │   ├── 123e4567-e89b-12d3-a456-426614174005.png
+│   │   ├── 123e4567-e89b-12d3-a456-426614174006.png
+│   │   └── default.png
+│   ├── reportimg
+│   │   ├── 02df566a-0622-4a1a-a612-8142246ca7a0.png
+│   │   ├── 03798d29-f449-48c2-b265-5bae6bc73ea5.png
+│   │   ├── 0b61976c-a517-46b6-8057-10bf0582d2bd.png
+│   │   ├── 0c933a8f-6ede-40c5-b5bf-bbe840c83496.png
+│   │   ├── 0f8a06bd-713a-440e-b675-f62c4e02f7a6.png
+│   │   ├── 1025450b-486d-48a1-b974-15603635d62c.png
+│   │   ├── 19b2da57-c587-413e-a30d-293f966d0cfa.png
+│   │   ├── 1ef3e8c3-6f33-483f-940f-cd3517225f23.png
+│   │   ├── 20241106_183450_broken man.png.png
+│   │   ├── 20241106_183912_broken man.png.png
+│   │   ├── 20241106_184007_broken man.png.png
+│   │   ├── 20241106_184051_broken man.png.png
+│   │   ├── 20241106_184205_broken man.png.png
+│   │   ├── 35ed67ec-3b70-4674-a1fb-4c8f35986a04.png
+│   │   ├── 3bce254e-e0e5-4143-a4a1-1a07c03b89e1.png
+│   │   ├── 3ce434d7-6484-427f-99a5-0fd8f7f8177f.png
+│   │   ├── 3df0c4bc-e6b5-4a06-afde-90521cc46703.png
+│   │   ├── 43d6ff54-d356-43e8-98d1-208fc7a57b09.png
+│   │   ├── 455ec0df-29b6-4a76-b2f3-885edeb4b412.png
+│   │   ├── 46483c12-23a5-40ef-875e-b584662b686d.png
+│   │   ├── 4775de25-6532-4179-ab7d-9c7faf5ce545.png
+│   │   ├── 47efac09-bc00-496a-93b9-1c37a4f14152.png
+│   │   ├── 4ad1bdaa-a2ef-4f35-b993-fe3b1ed8620c.png
+│   │   ├── 4bb06cae-48e8-4add-b7ba-78df996ef8c5.png
+│   │   ├── 4f986d13-e374-45f1-822d-d3469f417e3b.png
+│   │   ├── 4fe6c4aa-4b38-4dd2-9ddc-e58d3c5ad46b.png
+│   │   ├── 55017f22-f1fd-4d0d-937d-a92ae04865c8.png
+│   │   ├── 561bf058-8361-4440-9a24-ed000abdf0c2.png
+│   │   ├── 568906ca-616e-4f6b-a795-e0e4bb8f9ff0.png
+│   │   ├── 5922abc2-5532-47ba-91a2-3873d03c36b4.png
+│   │   ├── 62ecd9d7-fc64-4ac0-9be1-b2fe92362658.png
+│   │   ├── 650dd24d-0353-4c14-bcb6-4e3638248fef.png
+│   │   ├── 653c7bef-5f29-49d7-af9a-e6a741a36ce5.png
+│   │   ├── 68d561b3-856a-41c7-8f0f-52b862fd023b.png
+│   │   ├── 6cd12bc7-fcd8-4972-a4b0-745b0a463e17.png
+│   │   ├── 6deae20b-0822-4f64-a70f-9c98f0df188e.png
+│   │   ├── 71c82074-f3d1-4ce2-88de-b6fcaf5e9e3e.png
+│   │   ├── 75bdaee8-0c91-4483-913e-f2b87a1dfe6e.png
+│   │   ├── 769deb54-4c2f-480b-9cb4-a0fc97eb4c72.png
+│   │   ├── 7c6edf21-3fae-42ed-99e0-33e1b2f6901c.png
+│   │   ├── 7ce0b0a5-fa89-45b9-a2ce-47a9db38889a.png
+│   │   ├── 7f83b8cd-f822-42e5-8a7e-a4b45a279ebf.png
+│   │   ├── 80a52a93-c4ce-489a-a1aa-d9612b94f46c.png
+│   │   ├── 8db89a9c-fda0-4d97-acc7-5af4b9dcf763.png
+│   │   ├── 98be1c55-0683-487f-b3a5-3a0563706f7c.png
+│   │   ├── a22df640-17c1-4d55-b41b-debab795f446.png
+│   │   ├── a2a0c44a-9ad8-4d51-9593-043203421373.png
+│   │   ├── a64ceeb4-a1f7-4806-ad0b-2f48a8e489eb.png
+│   │   ├── ae2d64dd-1578-421d-9cf1-972d5f49d2cd.png
+│   │   ├── b16e580c-8a23-4862-8e01-7877a0ad1e25.png
+│   │   ├── b1ff5b1e-542a-4c91-bc8a-4fd489752cc6.png
+│   │   ├── b69efc73-df85-4617-8688-4b18952b2406.png
+│   │   ├── b8aaa12e-53a5-467a-8754-c3a3d28a59ef.png
+│   │   ├── b958f9a0-cf0a-4d28-b79e-cf81c81af74b.png
+│   │   ├── c1d9bb70-5288-484c-973f-ab6962765860.png
+│   │   ├── c23bac33-7711-4456-ade0-71c5a108ca42.png
+│   │   ├── c56b49c3-c9a8-491b-8779-97dee719d712.png
+│   │   ├── c93a4395-2137-4aa3-9ba6-f4a569d66d9f.png
+│   │   ├── cd2cf5cb-7f19-4a18-9f62-b5127499f240.png
+│   │   ├── d4954252-af1c-4035-b961-27552d3fab84.png
+│   │   ├── dd30d5f6-aaab-4efd-90d5-cb35f620921f.png
+│   │   ├── default.png
+│   │   ├── ec538c03-6c11-4d4e-b30e-4e0722d80028.png
+│   │   ├── f4b13500-42c4-4019-a0ea-b3d7daefce44.png
+│   │   ├── f5b4ea06-5872-49f9-8513-1aebcc8de5e1.png
+│   │   ├── f7e31224-f0eb-4d61-a00a-c902ac4fee15.png
+│   │   ├── f802b32b-a621-494d-8e4f-603040f6f7b1.png
+│   │   ├── f93e9368-645f-4d24-abc3-f29453f04c37.png
+│   │   └── ffd091c0-1e8f-429c-bf19-87b7ab6af35e.png
+│   └── voucherimg
+│       ├── 024664c3-70d0-4b41-a312-35a5f7765464.png
+│       ├── 123e4567-e89b-12d3-a456-426614174000.png
+│       ├── c61077ea-70f9-4c45-87b3-e2690f2f7424.png
+│       ├── d532d088-f8a2-43d5-906f-25536b72dbc4.png
+│       ├── default.png
+│       ├── df9c329d-531c-4f72-b7b0-3389ffdaa350.png
+│       ├── f50e5acc-29a3-4f78-87fe-03657d6e13ad.png
+│       ├── fd28d1e8-53c6-485f-919b-817d0dee1bf4.png
+│       ├── rw012.png
+│       ├── rw123.png
+│       ├── rw345.png
+│       ├── rw456.png
+│       ├── rw567.png
+│       └── rw789.png
+├── main.py
+├── migrate.py
+├── requirements.txt
+├── seed.py
+├── src
+│   ├── login
+│   ├── middleware
+│   │   └── verifyJWT.py
+│   ├── migrations
+│   │   ├── 10102024createUserTable.py
+│   │   ├── 10162024createReportsTable.py
+│   │   ├── 10182024CreateRewards.py
+│   │   ├── 10262024createPointsTable.py
+│   │   ├── 11052024createMyRewards.py
+│   │   ├── 11082024createForgotPassword.py
+│   │   ├── 11082024createUnverifiedUsers.py
+│   │   ├── 11102024createAuthorityTable.py
+│   │   ├── 11102024createPostsTable.py
+│   │   └── migration_utils.py
+│   ├── posts
+│   │   ├── controllers
+│   │   │   └── ControllerPosts.py
+│   │   ├── models
+│   │   │   ├── AuthorityModel.py
+│   │   │   └── PostModel.py
+│   │   ├── services
+│   │   │   ├── AuthorityService.py
+│   │   │   └── PostService.py
+│   │   ├── test_api
+│   │   │   └── test_post_controller.py
+│   │   └── test_unit
+│   │       └── test_post_service.py
+│   ├── reports
+│   │   ├── controllers
+│   │   │   └── ControllerReports.py
+│   │   ├── models
+│   │   │   ├── PointsModel.py
+│   │   │   └── ReportModels.py
+│   │   ├── services
+│   │   │   ├── OllamaAsync.py
+│   │   │   ├── PointsService.py
+│   │   │   ├── ReportService.py
+│   │   │   └── telegramBot.py
+│   │   ├── test_api
+│   │   │   ├── hotdogcat.png
+│   │   │   └── test_controller_report.py
+│   │   └── test_unit
+│   │       ├── test_points_service.py
+│   │       └── test_report_service.py
+│   ├── rewards
+│   │   ├── controllers
+│   │   │   └── ControllerReward.py
+│   │   ├── models
+│   │   │   ├── MyRewards.py
+│   │   │   ├── RewardModel.py
+│   │   │   └── test.csv
+│   │   ├── services
+│   │   │   ├── RewardService.py
+│   │   │   └── pooop.py
+│   │   ├── test_api
+│   │   │   ├── reward_image.png
+│   │   │   └── test_rewards_controller.py
+│   │   └── test_unit
+│   │       └── test_reward_service.py
+│   └── users
+│       ├── controllers
+│       │   ├── ControllerPublic.py
+│       │   └── ControllerUser.py
+│       ├── models
+│       │   ├── PasswordReset.py
+│       │   ├── UnverifiedUsers.py
+│       │   └── UserModels.py
+│       ├── services
+│       │   ├── AuthService.py
+│       │   └── UserService.py
+│       ├── test_api
+│       │   ├── test_profile_picture.png
+│       │   └── test_user_controller.py
+│       └── test_unit
+│           └── test_user_service.py
+├── structure.txt
+└── todo
+
+35 directories, 183 files
